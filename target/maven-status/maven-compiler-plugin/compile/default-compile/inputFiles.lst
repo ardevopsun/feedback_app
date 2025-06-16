@@ -2,3 +2,4 @@
 /home/devops/feedback_app/src/main/java/com/example/feedback/model/Feedback.java
 /home/devops/feedback_app/src/main/java/com/example/feedback/service/FeedbackService.java
 /home/devops/feedback_app/src/main/java/com/FeedbackAppApplication.java
+/home/devops/feedback_app/src/main/java/com/example/feedback/repository/FeedbackRepository.java
