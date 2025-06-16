@@ -1,6 +1,17 @@
 package com.example.feedback.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Feedback {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private String name;
     private String email;
     private String message;
@@ -14,7 +25,11 @@ public class Feedback {
         this.message = message;
     }
 
-    // Getters and setters
+    // Getters and Setters
+    public Long getId() {
+        return id;
+    }
+
     public String getName() {
         return name;
     }

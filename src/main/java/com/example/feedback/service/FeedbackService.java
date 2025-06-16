@@ -1,20 +1,26 @@
 package com.example.feedback.service;
 
 import com.example.feedback.model.Feedback;
+import com.example.feedback.repository.FeedbackRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class FeedbackService {
-    private final List<Feedback> feedbackList = new ArrayList<>();
+
+    private final FeedbackRepository repository;
+
+    public FeedbackService(FeedbackRepository repository) {
+        this.repository = repository;
+    }
 
     public void saveFeedback(Feedback feedback) {
-        feedbackList.add(feedback);
+        repository.save(feedback);
     }
 
     public List<Feedback> getAllFeedback() {
-        return feedbackList;
+        return repository.findAll();
     }
 }
+
