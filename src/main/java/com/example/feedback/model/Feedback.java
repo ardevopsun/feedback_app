@@ -14,13 +14,29 @@ public class Feedback {
         this.message = message;
     }
 
-    // Getters and Setters
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
+    // Getters and setters
+    public String getName() {
+        return name;
+    }
 
-    public String getEmail() { return email; }
-    public void setEmail(String email) { this.email = email; }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-    public String getMessage() { return message; }
-    public void setMessage(String message) { this.message = message; }
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
 }
+

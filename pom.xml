@@ -1,29 +1,36 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" 
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
-         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
+
+    <!-- This parent brings in all correct versions for Spring Boot -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.2.5</version>
+        <relativePath/> <!-- Look up in repository -->
+    </parent>
+
     <groupId>com.example</groupId>
     <artifactId>feedback_app</artifactId>
     <version>1.0.0</version>
-    <packaging>jar</packaging>
-
-    <name>Feedback Application</name>
+    <name>Feedback App</name>
+    <description>Simple feedback app using Spring Boot</description>
 
     <properties>
         <java.version>17</java.version>
-        <spring.boot.version>3.2.0</spring.boot.version>
     </properties>
 
     <dependencies>
-        <!-- Spring Boot Starter Web -->
+        <!-- Spring Web Starter -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!-- For JSON Parsing -->
+        <!-- Jackson JSON -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
@@ -39,11 +46,13 @@
 
     <build>
         <plugins>
-            <!-- Spring Boot Maven Plugin -->
+            <!-- Spring Boot Plugin -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
+
 </project>
+
