@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: feedback-app
+  labels:
+    app: feedback-app
 spec:
   replicas: 1
   selector:
@@ -18,23 +20,9 @@ spec:
           ports:
             - containerPort: 8080
           env:
-            - name: DB_HOST
-              valueFrom:
-                configMapKeyRef:
-                  name: feedback-db-config
-                  key: DB_HOST
-            - name: DB_NAME
-              valueFrom:
-                configMapKeyRef:
-                  name: feedback-db-config
-                  key: DB_NAME
-            - name: DB_USERNAME
-              valueFrom:
-                secretKeyRef:
-                  name: feedback-db-secret
-                  key: DB_USERNAME
-            - name: DB_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: feedback-db-secret
-                  key: DB_PASSWORD
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:mysql://feedbackdb.cijgo40wws5f.us-east-1.rds.amazonaws.com:3306/feedbackdb
+            - name: SPRING_DATASOURCE_USERNAME
+              value: admin
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: "12345678"

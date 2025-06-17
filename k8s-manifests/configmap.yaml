@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: feedback-db-config
+  name: feedbackdb-config
 data:
-  DB_HOST: feedback-db.cijgo40wws5f.us-east-1.rds.amazonaws.com
-  DB_NAME: feedback-db
+  DB_HOST: feedbackdb.cijgo40wws5f.us-east-1.rds.amazonaws.com
+  DB_NAME: feedbackdb

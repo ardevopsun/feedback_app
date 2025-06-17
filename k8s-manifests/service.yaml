@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: feedback-app-service
+  name: feedback-service
 spec:
   selector:
     app: feedback-app
