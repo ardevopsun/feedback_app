@@ -1,6 +1,6 @@
 # Feedback App (Spring Boot + React + Docker + AWS EKS)
 
-This project is a full-stack feedback collection system built with:
+**This project is a full-stack feedback collection system built with:**
 - **Backend**: Spring Boot + MySQL (RDS)
 - **Frontend**: React (with Pagination)
 - **Containerization**: Docker
@@ -33,7 +33,7 @@ This project is a full-stack feedback collection system built with:
 
 ## Prerequisites 
 
-Before running/deploying, make sure you have:
+**Before running/deploying, make sure you have:**
 
     - Java 17
     - Node.js (v18+)
@@ -50,6 +50,7 @@ Before running/deploying, make sure you have:
      git clone https://github.com/ardevopsun/feedback_app.git
      cd feedback_app
 
+
 **2. Local Development**
 
 _**Backend (Spring Boot)**_
@@ -57,7 +58,7 @@ _**Backend (Spring Boot)**_
     cd feedback-api
     mvn spring-boot:run
   
-  _Backend runs at: http://localhost:8080_
+  _**Backend runs at:** http://localhost:8080_
 
 _**Frontend (React)**_
   
@@ -65,11 +66,13 @@ _**Frontend (React)**_
     npm install
     npm start
   
-_Frontend runs at: http://localhost:3000_
+_**Frontend runs at:** http://localhost:3000_
 
-Make sure feedback-ui/src/App.js has this base URL for backend:
 
-const backendBaseUrl = 'http://localhost:8080';
+**Make sure feedback-ui/src/App.js has this base URL for backend:**
+
+    const backendBaseUrl = 'http://localhost:8080';
+
 
 **3. Docker Build & Push**
 
@@ -83,9 +86,10 @@ _**Frontend:**_
     docker build -t ardevopsun/feedback-ui:latest .
     docker push ardevopsun/feedback-ui:latest
 
+
 **4. Deploy to AWS EKS**
 
-You should already have:
+**You should already have:**
 
   - An EKS cluster
   - IAM OIDC + ALB Ingress Controller setup
@@ -100,9 +104,9 @@ You should already have:
     kubectl apply -f feedback-ui-service.yaml
     kubectl apply -f feedback-ingress.yaml
   
-Replace the following in your feedback-ingress.yaml:
+**Replace the following in your feedback-ingress.yaml:**
 
-  - alb.ingress.kubernetes.io/certificate-arn
+  - alb.ingress.kubernetes.io/certificate-arn(Replace your ARN)
   - Host: feedback.pingdevops.info(Replace your host)
 
 Wait 1–2 mins and visit: _https://feedback.pingdevops.info_
