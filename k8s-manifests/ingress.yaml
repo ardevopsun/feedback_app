@@ -6,7 +6,7 @@ metadata:
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:831645374461:certificate/0a2b17b5-1b0c-429a-aa6a-cd62ad772a0a
     alb.ingress.kubernetes.io/target-type: ip
-    alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS": 443}]'
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443},{"HTTP":80}]'
 spec:
   ingressClassName: alb
   rules:
@@ -26,4 +26,4 @@ spec:
               service:
                 name: feedback-service
                 port:
-                  number: 8080
+                  number: 80
