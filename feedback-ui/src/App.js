@@ -15,7 +15,7 @@ function App() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("http://a24b0bb5c6421452eadc200c2ef81946-1149647776.us-east-1.elb.amazonaws.com/feedback", {
+    const response = await fetch("http://a1a4ca0d581574a7ca9d88d7d7f949c5-904221654.us-east-1.elb.amazonaws.com/feedback", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
